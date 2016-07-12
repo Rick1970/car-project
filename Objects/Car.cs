@@ -7,18 +7,16 @@ namespace CarLot.Objects
   {
 // Set strings
     private string _makeModel;
-    // private int _price;
-    // private int _miles;
+    private string _price;
+    private string _miles;
+    private static List<Car> _instances = new List<Car> {};
 // Constructor
-    public Car (string makemodel)
+    public Car (string makemodel, string price, string mileage)
     {
       _makeModel = makemodel;
+      _price = price;
+      _miles = mileage;
     }
-    // {
-    //   SetMakeModel(vehicle);
-    //   SetPrice(cost);
-    //   SetMiles(mileage);
-    // }
 // Getters and Setters
     public string GetMakeModel()
     {
@@ -28,24 +26,34 @@ namespace CarLot.Objects
     {
       _makeModel = newMakeModel;
     }
-    //
-    // public int GetPrice()
-    // {
-    //   return _price;
-    // }
-    // public void SetPrice(int newPrice)
-    // {
-    //   _price = newPrice;
-    // }
-    //
-    // public int GetMiles()
-    // {
-    //   return _miles;
-    // }
-    // public void SetMiles(int newMiles)
-    // {
-    //   _miles = newMiles;
-    // }
+
+    public string GetPrice()
+    {
+      return _price;
+    }
+    public void SetPrice(string newPrice)
+    {
+      _price = newPrice;
+    }
+
+    public string GetMiles()
+    {
+      return _miles;
+    }
+    public void SetMiles(string newMiles)
+    {
+      _miles = newMiles;
+    }
+
+    public static List<Car> GetAll()
+    {
+      return _instances;
+    }
+
+    public void Save()
+    {
+      _instances.Add(this);
+    }
 // brackets added when text below was commented out
   }
 }

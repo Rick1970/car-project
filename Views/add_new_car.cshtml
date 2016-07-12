@@ -1,10 +1,10 @@
 <h1>New Car Entry:</h1>
-<form action="/car_added">
-  <label for="new-make-model">What is the Make and Model?</label>
-  <input id="new-make-model" name="new-make-model" type="text">
-  <!-- <label for="mileage">Miles on Odometer</label>
-  <input id="mileage" name="mileage" type="number">
+<form action="/car_added" method="post">
+  <label for="make-model">What is the Make and Model?</label>
+  <input id="make-model" name="make-model" type="text">
   <label for="price">How much do you want for it?</label>
-  <input id="price" name="price" type="number"> -->
+  <input id="price" name="price" type="text">
+  <label for="mileage">Miles on Odometer</label>
+  <input id="mileage" name="mileage" type="text">
   <button type="submit">Submit</button>
 </form>

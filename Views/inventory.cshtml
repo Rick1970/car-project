@@ -1,0 +1,14 @@
+<h1>Car Inventory</h1>
+<ul>
+  @foreach(var fresh in Model)
+  {
+    <li><strong>@fresh.GetMakeModel()</strong></li>
+      <ul>
+        <li>Price: @fresh.GetPrice()</li>
+        <li>Current Mileage: @fresh.GetMiles()</li>
+      </ul>
+      <br>
+  }
+</ul>
+
+<p><a href="/">Add Another Car</a></p>

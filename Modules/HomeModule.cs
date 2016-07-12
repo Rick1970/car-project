@@ -9,9 +9,14 @@ namespace CarLot
     public HomeModule()
     {
       Get["/"] = _ => View["add_new_car.cshtml"];
-      Get["/car_added"] = _ => {
-        Car newCar = new Car(Request.Query["new-make-model"]);
+      Post["/car_added"] = _ => {
+        Car newCar = new Car(Request.Form["make-model"], Request.Form["price"], Request.Form["mileage"]);
+        newCar.Save();
         return View["car_added.cshtml", newCar];
+      };
+      Get["/inventory"] = _ => {
+        List<Car> allCars = Car.GetAll();
+        return View["inventory.cshtml", allCars];
       };
     }
   }
